@@ -1,0 +1,19 @@
+#pragma once
+
+#include "ofMain.h"
+//#include "ofxRpiLED.h"
+
+//#include "Adafruit_PixelDust.h"
+#include "../../../../../../rpi-rgb-led-matrix-master/led-matrix-c.h"
+#include "lis3dh.h"
+#include <signal.h>
+
+
+class ofApp : public ofBaseApp{
+	public:
+		ofxRpiLED 	led;
+		ofImage 	image;
+		void setup();
+		void update();
+		void draw();
+};
