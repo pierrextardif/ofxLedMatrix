@@ -1,6 +1,5 @@
 # ofxLEDMatrix
 
-</br>
 Repository to adapt [this library](https://github.com/hzeller/rpi-rgb-led-matrix/) into [Openframeworks](https://openframeworks.cc).
  </br> The goal is to use the [Adafruit Leds Matrix](https://www.adafruit.com/product/3649) & [bonnet](https://www.adafruit.com/product/3211) with [Openframeworks](https://openframeworks.cc) on [raspberry-Pi 3 model B+](https://www.raspberrypi.org/).
 </br>
@@ -42,6 +41,43 @@ Just
 ```bash
 cd example-api-use
 make
-sudo ./demo 
+sudo ./demo
 
 ```
+
+[Make a note of the path](#path-link) to the root directory of the rpi-rgb-led-matrix :
+```bash
+#from the root directory of the rpi-rgb-led-matrix repo :
+pwd
+#gives me :
+#copy into the clipboard:
+# install xclip : sudo apt-get install xclip
+pwd | xclip -i
+```
+
+
+### 3) Addon
+
+Add this repository to your Openframeworks addon folder in :
+```bash
+cd OF_Install_Directory/addons/
+git clone https://github.com/pierrextardif/ofxLedMatrix
+cd ofxLEDMatrix/
+```
+Then change the path of the addons.make using the path copied [earlier](README.md#path-link).
+
+## Example
+
+Just try running [the example](./example).
+
+### Testing on other machine
+
+Try copying the example on an other (more powerful) machine and running it, transforming the line :
+```cpp
+//#define COMPUTERWORK
+```
+into
+```cpp
+#define COMPUTERWORK
+```
+so the graphics can be worked on, on a faster machine ( compilation), then uploaded on the PI.
