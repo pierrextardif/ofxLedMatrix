@@ -26,8 +26,6 @@
 #   GTK is installed, one might test that here and create a variable to check. 
 ################################################################################
 # None
-#APPNAME = projectGenerator
-#PROJECT_AFTER_OSX = cp "$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME" "$TARGET_BUILD_DIR/commandLinePG"; rm -rf "$TARGET_BUILD_DIR/$PRODUCT_NAME.app";	mv "$TARGET_BUILD_DIR/commandLinePG" "$TARGET_BUILD_DIR/projectGenerator"
 
 ################################################################################
 # PROJECT EXTERNAL SOURCE PATHS
@@ -72,30 +70,12 @@
 #		(default) PROJECT_LDFLAGS = -Wl,-rpath=./libs
 #
 #   Note: Leave a leading space when adding list items with the += operator
-################################################################################
-# Relative path to the ALREADY-COMPILED rpi-rgb-led-matrix code:
-RGB_LIB_PATH=../../../../rpi-rgb-led-matrix-master/
-RGB_INCDIR=$(RGB_LIB_PATH)/include
-RGB_LIBDIR=$(RGB_LIB_PATH)/lib
-RGB_LIBRARY_NAME=rgbmatrix
-RGB_LIBRARY=$(RGB_LIBDIR)/lib$(RGB_LIBRARY_NAME).a
-
-# Relative path to the Adafruit_PixelDust library source:
-PIXELDUST_PATH=..
-
-PROJECT_LDFLAGS = -W -L$(RGB_LIBDIR) -l$(RGB_LIBRARY_NAME) -lrt -lm -lpthread
-LIBS= lis3dh.o $(RGB_LIBRARY)
-CXXFLAGS=-Wall -Ofast -fomit-frame-pointer -funroll-loops -s -I$(RGB_INCDIR) -I$(PIXELDUST_PATH)
-#../../../../../rpi-rgb-led-matrix-master/include/led-matrix-c.h
-#PROJECT_LDFLAGS = -Wl -Wall -Ofast -fomit-frame-pointer -funroll-loops -s -I$(RGB_INCDIR) -I$(PIXELDUST_PATH)
-#PROJECT_LDFLAGS=-W -Wall -Ofast -fomit-frame-pointer -funroll-loops -L$(RGB_LIBDIR) -l$(RGB_LIBRARY_NAME) -lrt -lm -lpthread -rpath=../../../../rpi-rgb-led-matrix-master/
-
-
+#
 # Currently, shared libraries that are needed are copied to the 
 # $(PROJECT_ROOT)/bin/libs directory.  The following LDFLAGS tell the linker to
 # add a runtime path to search for those shared libraries, since they aren't 
 # incorporated directly into the final executable application binary.
-# TODO: should this be a default setting?
+################################################################################
 # PROJECT_LDFLAGS=-Wl,-rpath=./libs
 
 ################################################################################
@@ -147,7 +127,7 @@ CXXFLAGS=-Wall -Ofast -fomit-frame-pointer -funroll-loops -s -I$(RGB_INCDIR) -I$
 #
 #   Note: Leave a leading space when adding list items with the += operator
 ################################################################################
-PROJECT_OPTIMIZATION_CFLAGS_RELEASE = -O3
+# PROJECT_OPTIMIZATION_CFLAGS_RELEASE = 
 # PROJECT_OPTIMIZATION_CFLAGS_DEBUG = 
 
 ################################################################################

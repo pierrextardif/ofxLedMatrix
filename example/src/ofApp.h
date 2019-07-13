@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-// #define COMPUTERWORK
+#define COMPUTERWORK
 
 #ifdef COMPUTERWORK
 
@@ -26,6 +26,7 @@ class ofApp : public ofBaseApp{
 		
 		// drawing section
 		ofColor backGroundColor;
+		ofEasyCam cam;
 
 	#ifdef COMPUTERWORK
 		
@@ -36,4 +37,14 @@ class ofApp : public ofBaseApp{
 		LedMatrix ledMatrix;
 
 	#endif
+
+	ofVec3f acceleration;
+	int amountPoints;
+	ofVboMesh poly;
+	vector < ofVec3f > points, increments;
+	vector < ofColor > colors;
+	vector < ofVec3f > initPolyline(int _width, int _height, vector < ofVec3f >* pol);
+	vector < ofVec3f > incrementsInit(int amountPoints);
+	vector < ofVec3f > updatePolyline(vector < ofVec3f > pol);
+	void updateVbo(vector < ofVec3f > points, ofVboMesh* poly, float distThreshold);
 };
