@@ -1,5 +1,5 @@
 obj/linux64/Release/src/main.o: \
- /home/pierre/Documents/OF/apps/LEDs/example/src/main.cpp \
+ /home/pierre/Documents/OF/apps/ofxLedMatrix/example/src/main.cpp \
  /home/pierre/Documents/OF/libs/openFrameworks/ofMain.h \
  /home/pierre/Documents/OF/libs/openFrameworks/utils/ofConstants.h \
  /home/pierre/Documents/OF/libs/glm/include/glm/glm.hpp \
@@ -509,7 +509,7 @@ obj/linux64/Release/src/main.o: \
  /home/pierre/Documents/OF/libs/openFrameworks/video/ofGstVideoPlayer.h \
  /home/pierre/Documents/OF/libs/openFrameworks/3d/ofCamera.h \
  /home/pierre/Documents/OF/libs/openFrameworks/3d/ofEasyCam.h \
- /home/pierre/Documents/OF/apps/LEDs/example/src/ofApp.h \
+ /home/pierre/Documents/OF/apps/ofxLedMatrix/example/src/ofApp.h \
  /home/pierre/Documents/OF/libs/openFrameworks/app/ofAppNoWindow.h
 
 /home/pierre/Documents/OF/libs/openFrameworks/ofMain.h:
@@ -1564,6 +1564,6 @@ obj/linux64/Release/src/main.o: \
 
 /home/pierre/Documents/OF/libs/openFrameworks/3d/ofEasyCam.h:
 
-/home/pierre/Documents/OF/apps/LEDs/example/src/ofApp.h:
+/home/pierre/Documents/OF/apps/ofxLedMatrix/example/src/ofApp.h:
 
 /home/pierre/Documents/OF/libs/openFrameworks/app/ofAppNoWindow.h:
