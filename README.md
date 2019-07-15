@@ -81,3 +81,28 @@ into
 #define COMPUTERWORK
 ```
 so the graphics can be worked on, on a faster machine ( compilation), then uploaded on the PI.
+
+### Use the Lis3dh
+
+[The example](https://learn.adafruit.com/matrix-led-sand) given by adafruit includes [an accelerometer](https://www.adafruit.com/product/2809).
+</br>
+In order to use it I have included the code they have used in their example and mapped it to the movements of the [ofEasyCam](https://openframeworks.cc/documentation/3d/ofEasyCam/) for zooming in/out.
+
+#### Wiring
+
+You can wire the acelerometer using this diagram :
+![](assets/fritzAccelerometer.png)
+
+## Author
+
+pierre Tardif
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
+
+
+## Acknowledgments
+
+* [Adafruit Tutorial](https://learn.adafruit.com/matrix-led-sand)
+* [Henner Zeller](https://github.com/hzeller)
