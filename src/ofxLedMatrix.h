@@ -3,13 +3,13 @@
 #include "ofMain.h"
 
 #include "led-matrix-c.h"
-#include "lis3dh.h"
+#include "lis3dh/lis3dh.h"
 #include <signal.h>
 
-class LedMatrix{
+class ofxLedMatrix{
 	public : 
 
-	LedMatrix(){
+	ofxLedMatrix(){
 
 	}
 

@@ -1,7 +1,7 @@
-#include "LedMatrix.h"
+#include "ofxLedMatrix.h"
 
 
-void LedMatrix::setup(int _width, int _height){
+void ofxLedMatrix::setup(int _width, int _height){
 
 	width 	= 	_width;
 	height 	= 	_height;
@@ -37,7 +37,7 @@ void LedMatrix::setup(int _width, int _height){
 
 }
 
-void LedMatrix::updateMatrixLED(){
+void ofxLedMatrix::updateMatrixLED(){
 	lis3dh.accelRead(&xx, &yy, &zz);
 
 	led_canvas_clear(canvas);
