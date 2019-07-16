@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#define COMPUTERWORK
+//#define COMPUTERWORK
 
 #ifdef COMPUTERWORK
 
