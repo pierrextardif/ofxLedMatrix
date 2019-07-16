@@ -5,7 +5,11 @@ meta:
 	ADDON_TAGS = "device"
 	ADDON_URL = https://github.com/pierrextardif/ofxLedMatrix
 
+<<<<<<< HEAD
 linuxarmv7l:	
+=======
+linuxarmv6l:	
+>>>>>>> 58eaec2d4c6d71583f6898cf9bf54c2317a0783a
 
 	RGB_LIB_PATH		=	~/rpi-rgb-led-matrix-master/
 	RGB_INCDIR			=	$(RGB_LIB_PATH)/include

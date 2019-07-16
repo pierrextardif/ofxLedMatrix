@@ -6,7 +6,7 @@
 //========================================================================
 int main( ){
 
-ofSetupOpenGL(810,530, OF_WINDOW);
+ofSetupOpenGL(WIDTH,HEIGHT, OF_WINDOW);
 ofRunApp( new ofApp());
 
 //	ofAppNoWindow window;

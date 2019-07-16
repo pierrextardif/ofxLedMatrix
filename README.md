@@ -95,7 +95,11 @@ You can wire the acelerometer using this diagram :
 
 ## Author
 
+<<<<<<< HEAD
 pierre Tardif
+=======
+* _pierre Tardif_   [codingcoolsh.it](codingcoolsh.it)   :floppy_disk:
+>>>>>>> 58eaec2d4c6d71583f6898cf9bf54c2317a0783a
 
 ## License
 
