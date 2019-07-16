@@ -6,7 +6,7 @@ Repository to adapt [this library](https://github.com/hzeller/rpi-rgb-led-matrix
 
 - - - -
 
-![](assets/exampleAsset.gif)
+![.](assets/exampleAsset.gif)
 
 - - - -
 ## Getting Started
@@ -91,7 +91,7 @@ In order to use it I have included the code they have used in their example and 
 #### Wiring
 
 You can wire the acelerometer using this diagram :
-![](assets/fritzAccelerometer.png)
+![.](assets/fritzAccelerometer.png)
 
 ## Author
 
