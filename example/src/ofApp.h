@@ -14,7 +14,7 @@
 	#define WIDTH 	64
 	#define HEIGHT 	64
 
-	#include "LedMatrix/LedMatrix.h"
+	#include "LedMatrix.h"
 
 #endif
 

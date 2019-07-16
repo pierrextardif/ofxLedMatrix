@@ -5,19 +5,19 @@ meta:
 	ADDON_TAGS = "device"
 	ADDON_URL = https://github.com/pierrextardif/ofxLedMatrix
 
-linuxarmv7l:	
-	
-	ADDON_LDFLAGS 		= 	-L/usr/local/lib/ -L/usr/local/cuda/lib64
+linuxarmv6l:	
+
 	RGB_LIB_PATH		=	~/rpi-rgb-led-matrix-master/
 	RGB_INCDIR			=	$(RGB_LIB_PATH)/include
 	RGB_LIBDIR			=	$(RGB_LIB_PATH)/lib
 	RGB_LIBRARY_NAME	=	rgbmatrix
 	RGB_LIBRARY 		=	$(RGB_LIBDIR)/lib$(RGB_LIBRARY_NAME).a
 
-	ADDON_LDFLAGS 		= 	-W -L$(RGB_LIBDIR) -l$(RGB_LIBRARY_NAME) -lrt -lm -lpthread
+	OFXLEDMATRIX_ROOT 	=	$(OF_ROOT)/addons/ofxLedMatrix/lib/LedMatrix
+
+	ADDON_LDFLAGS 		= 	-W -L$(RGB_LIBDIR) -l$(RGB_LIBRARY_NAME) -l$(OFXLEDMATRIX_ROOT) -lrt -lm -lpthread
 	LIBS				= 	lis3dh.o $(RGB_LIBRARY)
 	CXXFLAGS			=	-Wall -Ofast -fomit-frame-pointer -funroll-loops -s -I$(RGB_INCDIR)
-
 
 #The library is installed in /usr/local/lib
 #The header files are in /usr/local/include
