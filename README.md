@@ -91,7 +91,7 @@ In order to use it I have included the code they have used in their example and 
 #### Wiring
 
 You can wire the acelerometer using this diagram :
-![.](assets/fritzAccelerometer.png)
+![.](assets/fritzing/fritzAccelerometer.png)
 
 ## Author
 
