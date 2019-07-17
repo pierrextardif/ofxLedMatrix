@@ -20,18 +20,3 @@ linuxarmv6l:
 	ADDON_CFLAGS = -Wall -Ofast -fomit-frame-pointer -funroll-loops -s -I$(RGB_INCDIR)
 
 	ADDON_INCLUDES = $(OF_ROOT)/addons/ofxLedMatrix/src/
-
-linuxarmv7l:
-
-	RGB_LIB_PATH=/home/pi/rpi-rgb-led-matrix-master/
-	RGB_INCDIR=$(RGB_LIB_PATH)/include
-	RGB_LIBDIR=$(RGB_LIB_PATH)/lib
-	RGB_LIBRARY_NAME=rgbmatrix
-	RGB_LIBRARY=$(RGB_LIBDIR)/lib$(RGB_LIBRARY_NAME).a
-
-	
-
-	ADDON_LIBS = lis3dh.o $(RGB_LIBRARY)
-	ADDON_CFLAGS = -Wall -Ofast -fomit-frame-pointer -funroll-loops -s -I$(RGB_INCDIR)
-
-	ADDON_INCLUDES = $(OF_ROOT)/addons/ofxLedMatrix/src/

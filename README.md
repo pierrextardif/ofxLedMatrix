@@ -25,7 +25,7 @@ Repository to adapt [this library](https://github.com/hzeller/rpi-rgb-led-matrix
 
 ### 1)Installing OpenFrameworks
 
-Get the latest OpenFrameworks version from [here](https://openframeworks.cc/download), and follow [this tutorial](https://openframeworks.cc/setup/raspberrypi/) to get set up with the openframeworks on raspberry Pi.
+Get the latest OpenFrameworks version from [here](https://openframeworks.cc/download)(linux armV6), and follow [this tutorial](https://openframeworks.cc/setup/raspberrypi/) to get set up with the openframeworks on raspberry Pi.
 </br>
 Make sure you can run some of the examples before proceeding any further (for example : OF_Install_Directory/examples/3DPrimitivesExample/).
 
@@ -62,9 +62,16 @@ Add this repository to your Openframeworks addon folder in :
 ```bash
 cd OF_Install_Directory/addons/
 git clone https://github.com/pierrextardif/ofxLedMatrix
-cd ofxLEDMatrix/
 ```
-Then change the path of the addons.make using the path copied [earlier](README.md#path-link).
+Then change the path of the addons.make using the path copied [earlier](README.md#path-link):
+```bash
+
+cd ofxLEDMatrix/
+sudo nano addon_config.mk
+```
+Replace
+![.](assets/rgbPath.png)
+RGB_LIB_PATH with the path copied.
 
 ## Example
 
