@@ -38,9 +38,9 @@ void ofApp::setup(){
 void ofApp::update(){
 
 	#ifndef COMPUTERWORK
-		acceleration = {	float(ledMatrix.xx) / 32000,
-							float(ledMatrix.yy) / 32000,
-							float(ledMatrix.zz) / 32000 };
+		averageAcceleration( {	float(ledMatrix.xx) / 32000,
+												float(ledMatrix.yy) / 32000,
+												float(ledMatrix.zz) / 32000 }, &acceleration );
 		// cout << "acceleration = " << ofToString(acceleration) << endl;
 	#endif
 
@@ -167,4 +167,13 @@ void ofApp::updateVbo(vector < ofVec3f > points, ofVboMesh* poly, float distThre
 			}
 		}
 	}
+}
+
+void ofApp::averageAcceleration(ofVec3f accelerometerVal, ofVec3f* acceleration){
+
+	float averagingFactor = 0.4;
+
+	acceleration->x += (accelerometerVal.x - acceleration->x) * averagingFactor;
+	acceleration->y += (accelerometerVal.y - acceleration->y) * averagingFactor;
+	acceleration->z += (accelerometerVal.z - acceleration->z) * averagingFactor;
 }

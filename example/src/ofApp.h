@@ -47,4 +47,6 @@ class ofApp : public ofBaseApp{
 	vector < ofVec3f > incrementsInit(int amountPoints);
 	vector < ofVec3f > updatePolyline(vector < ofVec3f > pol);
 	void updateVbo(vector < ofVec3f > points, ofVboMesh* poly, float distThreshold);
+
+	void averageAcceleration(ofVec3f accelerometerVal, ofVec3f* acceleration);
 };
