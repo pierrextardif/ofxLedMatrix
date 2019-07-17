@@ -34,7 +34,7 @@ class ofApp : public ofBaseApp{
 	
 	#else
 
-		LedMatrix ledMatrix;
+		ofxLedMatrix ledMatrix;
 
 	#endif
 
