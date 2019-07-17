@@ -11,10 +11,12 @@ void ofApp::setup(){
 	#ifdef COMPUTERWORK
 		
 		f.allocate(WIDTH, HEIGHT, GL_RGBA);
+		cam.setDistance(400);
 	
 	#else
 	
 		ledMatrix.setup(WIDTH, HEIGHT);
+		cam.setDistance(40);
 	
 	#endif
 
@@ -29,7 +31,6 @@ void ofApp::setup(){
 
 	poly.setMode(OF_PRIMITIVE_LINES);
 
-	cam.setDistance(400);
 
 }
 
@@ -61,6 +62,13 @@ void ofApp::update(){
 
 		cam.begin();
 		ofEnableDepthTest();
+
+	#ifndef COMPUTERWORK
+		ofRotateXRad(acceleration.x * M_PI);
+		ofRotateYRad(acceleration.y * M_PI);
+		ofRotateZRad(acceleration.z * M_PI);
+	#endif
+
 		ofClear(0,0);
 		ofBackground(ofColor::black);
 
