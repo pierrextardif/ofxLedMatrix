@@ -113,3 +113,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE)
 
 * [Adafruit Tutorial](https://learn.adafruit.com/matrix-led-sand)
 * [Henner Zeller](https://github.com/hzeller)
+
+## Next
+</br>
+Adding the libray precompiled straight into the `/lib` folder of the repo (no external install).
