@@ -25,7 +25,7 @@ void ofApp::setup(){
 	#ifdef COMPUTERWORK
 		amountPoints = 500;
 	#else
-		amountPoints = 40;
+		amountPoints = 100;
 	#endif
 	increments = initPolyline(WIDTH, HEIGHT, &points);
 
@@ -41,7 +41,8 @@ void ofApp::update(){
 		averageAcceleration( {	float(ledMatrix.xx) / 32000,
 												float(ledMatrix.yy) / 32000,
 												float(ledMatrix.zz) / 32000 }, &acceleration );
-		// cout << "acceleration = " << ofToString(acceleration) << endl;
+		cam.orbit((acceleration.x + acceleration.y + acceleration.z + 0.1)* ofGetElapsedTimef(), 0, 40, ofVec3f(0,0,0));
+		cam.lookAt(ofVec3f(0,0,0));
 	#endif
 
 
@@ -63,12 +64,6 @@ void ofApp::update(){
 		cam.begin();
 		ofEnableDepthTest();
 
-	#ifndef COMPUTERWORK
-		ofRotateXRad(acceleration.x * M_PI);
-		ofRotateYRad(acceleration.y * M_PI);
-		ofRotateZRad(acceleration.z * M_PI);
-	#endif
-
 		ofClear(0,0);
 		ofBackground(ofColor::black);
 
@@ -77,7 +72,7 @@ void ofApp::update(){
 		// float radiusSize = 0.4;
 		float radiusSize = 2;
 		for(int i=0;i<points.size();i++){
-			ofDrawCircle({points[i].x, points[i].y, points[i].z}, radiusSize);
+			ofDrawSphere({points[i].x, points[i].y, points[i].z}, radiusSize);
 		}
 
 		ofSetColor(255, 255);
@@ -171,9 +166,14 @@ void ofApp::updateVbo(vector < ofVec3f > points, ofVboMesh* poly, float distThre
 
 void ofApp::averageAcceleration(ofVec3f accelerometerVal, ofVec3f* acceleration){
 
-	float averagingFactor = 0.4;
+	float averagingFactor = 0.9;
 
 	acceleration->x += (accelerometerVal.x - acceleration->x) * averagingFactor;
 	acceleration->y += (accelerometerVal.y - acceleration->y) * averagingFactor;
 	acceleration->z += (accelerometerVal.z - acceleration->z) * averagingFactor;
+
+	// constrain
+	if(acceleration->x > 2) acceleration->x = 2;
+	if(acceleration->y > 2) acceleration->y = 2;
+	if(acceleration->z > 2) acceleration->z = 2;
 }
