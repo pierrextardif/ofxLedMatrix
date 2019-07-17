@@ -49,7 +49,7 @@ sudo ./demo
 ```bash
 #from the root directory of the rpi-rgb-led-matrix repo :
 pwd
-#gives me :
+#gives me : /home/pi/rpi-rgb-led-matrix-master
 #copy into the clipboard:
 # install xclip : sudo apt-get install xclip
 pwd | xclip -i
