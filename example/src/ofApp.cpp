@@ -41,7 +41,7 @@ void ofApp::update(){
 		averageAcceleration( {	float(ledMatrix.xx) / 32000,
 												float(ledMatrix.yy) / 32000,
 												float(ledMatrix.zz) / 32000 }, &acceleration );
-		cam.orbit((acceleration.x + acceleration.y + acceleration.z + 0.1)* ofGetElapsedTimef(), 0, 40, ofVec3f(0,0,0));
+		cam.orbit((acceleration.z + 0.1)* ofGetElapsedTimef(), 0, 40, ofVec3f(0,0,0));
 		cam.lookAt(ofVec3f(0,0,0));
 	#endif
 
