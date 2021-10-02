@@ -15,7 +15,15 @@ void ofApp::setup(){
 	
 	#else
 	
-		ledMatrix.setup(WIDTH, HEIGHT);
+		ledMatrix.setup(32, 32);
+		ledMatrix.setBrightness(10);
+		ledMatrix.setChainLength(3);
+		ledMatrix.setMultiplexing(1);
+		// ledMatrix.setPWMBits(6);
+		// ledMatrix.setPWMLsbNano(500);
+		// ledMatrix.setPWMDithBits(1);
+		ledMatrix.updateSettingsLedMatrix();
+
 		cam.setDistance(40);
 	
 	#endif
@@ -25,7 +33,7 @@ void ofApp::setup(){
 	#ifdef COMPUTERWORK
 		amountPoints = 500;
 	#else
-		amountPoints = 100;
+		amountPoints = 10;
 	#endif
 	increments = initPolyline(WIDTH, HEIGHT, &points);
 
@@ -38,9 +46,9 @@ void ofApp::setup(){
 void ofApp::update(){
 
 	#ifndef COMPUTERWORK
-		averageAcceleration( {	float(ledMatrix.xx) / 32000,
-												float(ledMatrix.yy) / 32000,
-												float(ledMatrix.zz) / 32000 }, &acceleration );
+		// averageAcceleration( {	float(ledMatrix.xx) / 32000,
+		// 										float(ledMatrix.yy) / 32000,
+		// 										float(ledMatrix.zz) / 32000 }, &acceleration );
 		cam.orbit((acceleration.z + 0.1)* ofGetElapsedTimef(), 0, 40, ofVec3f(0,0,0));
 		cam.lookAt(ofVec3f(0,0,0));
 	#endif
@@ -86,7 +94,7 @@ void ofApp::update(){
 			f.end();
 		#else
 			ledMatrix.end();
-			ledMatrix.updateMatrixLED();
+			ledMatrix.textureUpdateMatrixLED();
 	#endif
 
 }

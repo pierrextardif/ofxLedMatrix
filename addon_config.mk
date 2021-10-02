@@ -8,7 +8,7 @@ meta:
 linuxarmv6l:
 
 	#copy the path here :
-	RGB_LIB_PATH=/home/pi/rpi-rgb-led-matrix-master/
+	RGB_LIB_PATH=/home/pi/rpi-rgb-led-matrix/
 	RGB_INCDIR=$(RGB_LIB_PATH)/include
 	RGB_LIBDIR=$(RGB_LIB_PATH)/lib
 	RGB_LIBRARY_NAME=rgbmatrix

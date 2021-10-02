@@ -12,7 +12,7 @@
 #else
 
 	#define WIDTH 	64
-	#define HEIGHT 	64
+	#define HEIGHT 	32
 
 	#include "ofxLedMatrix.h"
 
